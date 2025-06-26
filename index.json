@@ -1,0 +1,29 @@
+{
+  "name": "VRChat Expression Menu Visualizer Repository",
+  "id": "dev.nekoare.vrc-tools",
+  "url": "https://nekoare.github.io/vrchat-expression-menu-visualizer/index.json",
+  "author": {
+    "name": "nekoare",
+    "url": "https://github.com/nekoare"
+  },
+  "packages": {
+    "dev.nekoare.vrc-expression-menu-visualizer": {
+      "versions": {
+        "1.0.0": {
+          "name": "dev.nekoare.vrc-expression-menu-visualizer",
+          "displayName": "VRChat Expression Menu Visualizer",
+          "version": "1.0.0",
+          "description": "VRChatのExpressionMenuを視覚化・編集するためのUnityエディタツール",
+          "unity": "2022.3",
+          "author": {
+            "name": "nekoare",
+            "url": "https://github.com/nekoare"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          }
+        }
+      }
+    }
+  }
+}
