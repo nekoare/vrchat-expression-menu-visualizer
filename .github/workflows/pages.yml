@@ -26,6 +26,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
+      - name: Create package ZIP file
+        run: |
+          cd Packages/dev.nekoare.vrc-expression-menu-visualizer
+          zip -r ../../dev.nekoare.vrc-expression-menu-visualizer-1.0.0.zip .
+          cd ../..
+          
+      - name: Calculate ZIP hash and update index.json
+        run: |
+          ZIP_HASH=$(sha256sum dev.nekoare.vrc-expression-menu-visualizer-1.0.0.zip | cut -d' ' -f1)
+          sed -i "s/PLACEHOLDER_HASH_WILL_BE_REPLACED/$ZIP_HASH/g" index.json
+        
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
         
