@@ -2,7 +2,7 @@
   "name": "VRChat Expression Menu Visualizer Repository",
   "id": "dev.nekoare.vrc-tools",
   "url": "https://nekoare.github.io/vrchat-expression-menu-visualizer/index.json",
-　"author": "nekoare",
+  "author": "nekoare",
   "packages": {
     "dev.nekoare.vrc-expression-menu-visualizer": {
       "versions": {
@@ -32,7 +32,7 @@
             "modular-avatar"
           ],
           "url": "https://nekoare.github.io/vrchat-expression-menu-visualizer/dev.nekoare.vrc-expression-menu-visualizer-1.0.0.zip",
-          "zipSHA256": "PLACEHOLDER_HASH_WILL_BE_REPLACED"
+          "zipSHA256": "cb7f9eac947adf62a71193c56bc11941e6c1acf91abf033c817ddaa730c3ffdf"
         }
       }
     }
