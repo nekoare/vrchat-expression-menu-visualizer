@@ -3,7 +3,6 @@
   "id": "dev.nekoare.vrc-tools",
   "url": "https://nekoare.github.io/vrchat-expression-menu-visualizer/index.json",
 　"author": "nekoare",
-  },
   "packages": {
     "dev.nekoare.vrc-expression-menu-visualizer": {
       "versions": {
