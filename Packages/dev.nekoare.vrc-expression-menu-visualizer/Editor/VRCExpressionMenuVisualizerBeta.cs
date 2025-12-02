@@ -18,7 +18,7 @@ namespace VRCExpressionMenuVisualizer
     // Marker components are defined in a runtime-compiled file (ExprMenuVisualizerMarkers.cs)
     // so Unity can reliably deserialize them across domain reloads / restarts.
 
-    public class VRCExpressionMenuVisualizerWindow : EditorWindow
+    public class VRCExpressionMenuVisualizerBetaWindow : EditorWindow
     {
         private VRCAvatarDescriptor selectedAvatar;
         private Vector2 scrollPosition;
@@ -943,7 +943,7 @@ namespace VRCExpressionMenuVisualizer
         [MenuItem("Tools/メニュー整理ツール/最新版-beta")]
         public static void ShowWindow()
         {
-            GetWindow<VRCExpressionMenuVisualizerWindow>("メニュー整理ツール (最新版-beta)");
+            GetWindow<VRCExpressionMenuVisualizerBetaWindow>("メニュー整理ツール (最新版-beta)");
         }
 
         private void OnGUI()
@@ -10400,7 +10400,7 @@ namespace VRCExpressionMenuVisualizer
     }
     
     // Helper class for submenu name input dialog
-    public class SubmenuNameInputWindow : EditorWindow
+    public class SubmenuNameInputBetaWindow : EditorWindow
     {
         private string inputText = "";
         private string dialogTitle = "";
