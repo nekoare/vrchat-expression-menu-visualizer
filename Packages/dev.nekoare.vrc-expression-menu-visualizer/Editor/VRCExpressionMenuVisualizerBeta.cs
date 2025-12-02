@@ -1907,7 +1907,7 @@ namespace VRCExpressionMenuVisualizer
                 }
                 return result;
             }
-            catch (Exception ex)
+            catch (Exception _)
             {
                 var inner = ex.InnerException ?? ex;
                 LogDetail($"BuildMergedMenuStructureWithModularAvatar: Exception - {inner.Message}");
@@ -7713,7 +7713,7 @@ namespace VRCExpressionMenuVisualizer
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception _)
                 {
                     Debug.LogWarning($"Failed to copy component '{componentType?.Name}' from '{sourceObject.name}': {ex.Message}");
                 }
@@ -7945,7 +7945,7 @@ namespace VRCExpressionMenuVisualizer
                                         EditorUtility.SetDirty(comp);
                                         PrefabUtility.RecordPrefabInstancePropertyModifications(comp);
                                     }
-                                    catch (Exception ex)
+                                    catch (Exception _)
                                     {
                                         Debug.LogWarning($"EnsureGeneratedMenuItems: failed to configure MA MenuItem component: {ex.Message}");
                                     }
@@ -8505,7 +8505,7 @@ namespace VRCExpressionMenuVisualizer
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception _)
             {
                 Debug.LogWarning($"ApplyExclusionSelection: post-process failed: {ex.Message}");
             }
@@ -8884,7 +8884,7 @@ namespace VRCExpressionMenuVisualizer
                                                 installerFieldLocal.SetValue(createdInstallTarget, installer);
                                                 EditorUtility.SetDirty(newGO);
                                             }
-                                            catch (Exception ex)
+                                            catch (Exception _)
                                             {
                                                 
                                             }
@@ -8902,7 +8902,7 @@ namespace VRCExpressionMenuVisualizer
                             // Use the newly created GO as the excludedItemGameObject for the rest of the method
                             excludedItemGameObject = newGO;
                         }
-                        catch (Exception ex)
+                        catch (Exception _)
                         {
                         }
                     }
@@ -8941,7 +8941,7 @@ namespace VRCExpressionMenuVisualizer
                         EditorUtility.SetDirty(excludedItemGameObject);
                         
                     }
-                    catch (Exception ex)
+                    catch (Exception _)
                     {
                         
                     }
@@ -8956,7 +8956,7 @@ namespace VRCExpressionMenuVisualizer
                             EditorUtility.SetDirty(installer as UnityEngine.Object);
                             
                         }
-                        catch (Exception ex)
+                        catch (Exception _)
                         {
                             
                         }
@@ -9698,7 +9698,7 @@ namespace VRCExpressionMenuVisualizer
 
                     reflectionAvailable = true;
                 }
-                catch (Exception ex)
+                catch (Exception _)
                 {
                     reflectionAvailable = false;
                     Debug.LogWarning($"[ExpressionMenuVisualizer] Modular Avatar reflection unavailable: {ex.Message}");
