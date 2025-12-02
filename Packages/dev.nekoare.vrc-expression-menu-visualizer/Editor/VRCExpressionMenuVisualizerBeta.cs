@@ -1439,7 +1439,7 @@ namespace VRCExpressionMenuVisualizer
             string dialogMessage = GetLocalizedText("新しいサブメニューの名前を入力してください:", "Please enter the name for the new submenu:");
             
             // Create a popup window for text input
-            return SubmenuNameInputWindow.ShowDialog(dialogTitle, dialogMessage, defaultName);
+            return SubmenuNameInputBetaWindow.ShowDialog(dialogTitle, dialogMessage, defaultName);
         }
 
         private MenuStatistics GatherStatistics()
@@ -1539,7 +1539,7 @@ namespace VRCExpressionMenuVisualizer
 
         private class ExclusionSelectionWindow : EditorWindow
         {
-            private VRCExpressionMenuVisualizerWindow owner;
+            private VRCExpressionMenuVisualizerBetaWindow owner;
             private string avatarName;
             private MergedMenuItem selectionRoot;
             private HashSet<string> workingSelection;
@@ -1549,7 +1549,7 @@ namespace VRCExpressionMenuVisualizer
             private readonly Dictionary<string, bool> groupFoldouts = new Dictionary<string, bool>(StringComparer.Ordinal);
             private GUIStyle highlightedMessageStyle;
 
-            public static ExclusionSelectionWindow ShowWindow(VRCExpressionMenuVisualizerWindow owner, string avatarName, MergedMenuItem root, HashSet<string> initialSelection)
+            public static ExclusionSelectionWindow ShowWindow(VRCExpressionMenuVisualizerBetaWindow owner, string avatarName, MergedMenuItem root, HashSet<string> initialSelection)
             {
                 var window = CreateInstance<ExclusionSelectionWindow>();
                 window.owner = owner;
@@ -9684,7 +9684,7 @@ namespace VRCExpressionMenuVisualizer
                         ?? buildContextType.GetConstructor(new[] { typeof(GameObject) });
                     buildContextPostProcessField = buildContextType.GetField("PostProcessControls", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
 
-                    var menuItemType = VRCExpressionMenuVisualizerWindow.GetModularAvatarMenuItemType();
+                    var menuItemType = VRCExpressionMenuVisualizerBetaWindow.GetModularAvatarMenuItemType();
                     if (menuItemType != null)
                     {
                         menuItemControlField = menuItemType.GetField("Control", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
@@ -9707,7 +9707,7 @@ namespace VRCExpressionMenuVisualizer
                 return reflectionAvailable;
             }
 
-            internal static MergedMenuItem Build(VRCExpressionMenuVisualizerWindow owner)
+            internal static MergedMenuItem Build(VRCExpressionMenuVisualizerBetaWindow owner)
             {
                 if (!EnsureReflection()) return null;
                 if (owner?.selectedAvatar == null) return null;
@@ -9733,9 +9733,9 @@ namespace VRCExpressionMenuVisualizer
 
                     componentPairs = EnumerateComponentPairs(owner.selectedAvatar.gameObject, clonedAvatarRoot).ToList();
 
-                    var menuItemType = VRCExpressionMenuVisualizerWindow.GetModularAvatarMenuItemType();
-                    var menuInstallerType = VRCExpressionMenuVisualizerWindow.GetModularAvatarMenuInstallerType();
-                    var installTargetType = VRCExpressionMenuVisualizerWindow.GetModularAvatarMenuInstallTargetType();
+                    var menuItemType = VRCExpressionMenuVisualizerBetaWindow.GetModularAvatarMenuItemType();
+                    var menuInstallerType = VRCExpressionMenuVisualizerBetaWindow.GetModularAvatarMenuInstallerType();
+                    var installTargetType = VRCExpressionMenuVisualizerBetaWindow.GetModularAvatarMenuInstallTargetType();
 
                     owner.maMenuItemSignatureMap.Clear();
 
@@ -9947,7 +9947,7 @@ namespace VRCExpressionMenuVisualizer
             }
 
             private static void PopulateChildren(
-                VRCExpressionMenuVisualizerWindow owner,
+                VRCExpressionMenuVisualizerBetaWindow owner,
                 object virtualNode,
                 MergedMenuItem parent,
                 Dictionary<VRCExpressionsMenu.Control, Component> controlSources,
@@ -10111,7 +10111,7 @@ namespace VRCExpressionMenuVisualizer
             }
 
             private static MergedMenuItem CreateMergedItem(
-                VRCExpressionMenuVisualizerWindow owner,
+                VRCExpressionMenuVisualizerBetaWindow owner,
                 VRCExpressionsMenu.Control virtualControl,
                 object virtualControlObject,
                 Dictionary<VRCExpressionsMenu.Control, Component> controlSources,
@@ -10143,8 +10143,8 @@ namespace VRCExpressionMenuVisualizer
                 if (resolvedComponent != null)
                 {
                     sourceComponent = resolvedComponent;
-                    var menuItemTypeLocal = VRCExpressionMenuVisualizerWindow.GetModularAvatarMenuItemType();
-                    var menuInstallerTypeLocal = VRCExpressionMenuVisualizerWindow.GetModularAvatarMenuInstallerType();
+                    var menuItemTypeLocal = VRCExpressionMenuVisualizerBetaWindow.GetModularAvatarMenuItemType();
+                    var menuInstallerTypeLocal = VRCExpressionMenuVisualizerBetaWindow.GetModularAvatarMenuInstallerType();
 
                     if (menuInstallerTypeLocal != null && menuInstallerTypeLocal.IsInstanceOfType(resolvedComponent))
                     {
@@ -10416,7 +10416,7 @@ namespace VRCExpressionMenuVisualizer
             result = null;
             dialogClosed = false;
             
-            var window = CreateInstance<SubmenuNameInputWindow>();
+            var window = CreateInstance<SubmenuNameInputBetaWindow>();
             window.titleContent = new GUIContent(title);
             window.dialogTitle = title;
             window.dialogMessage = message;
@@ -10476,14 +10476,14 @@ namespace VRCExpressionMenuVisualizer
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
             
-            if (GUILayout.Button(VRCExpressionMenuVisualizerWindow.GetLocalizedTextStatic("作成", "Create"), GUILayout.Width(80)))
+            if (GUILayout.Button(VRCExpressionMenuVisualizerBetaWindow.GetLocalizedTextStatic("作成", "Create"), GUILayout.Width(80)))
             {
                 ConfirmDialog();
             }
 
             GUILayout.Space(10);
 
-            if (GUILayout.Button(VRCExpressionMenuVisualizerWindow.GetLocalizedTextStatic("キャンセル", "Cancel"), GUILayout.Width(80)))
+            if (GUILayout.Button(VRCExpressionMenuVisualizerBetaWindow.GetLocalizedTextStatic("キャンセル", "Cancel"), GUILayout.Width(80)))
             {
                 CancelDialog();
             }
