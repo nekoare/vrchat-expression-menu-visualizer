@@ -1907,7 +1907,7 @@ namespace VRCExpressionMenuVisualizer
                 }
                 return result;
             }
-            catch (Exception _)
+            catch (Exception ex)
             {
                 var inner = ex.InnerException ?? ex;
                 LogDetail($"BuildMergedMenuStructureWithModularAvatar: Exception - {inner.Message}");
@@ -7713,7 +7713,7 @@ namespace VRCExpressionMenuVisualizer
                         }
                     }
                 }
-                catch (Exception _)
+                catch (Exception ex)
                 {
                     Debug.LogWarning($"Failed to copy component '{componentType?.Name}' from '{sourceObject.name}': {ex.Message}");
                 }
@@ -7945,7 +7945,7 @@ namespace VRCExpressionMenuVisualizer
                                         EditorUtility.SetDirty(comp);
                                         PrefabUtility.RecordPrefabInstancePropertyModifications(comp);
                                     }
-                                    catch (Exception _)
+                                    catch (Exception ex)
                                     {
                                         Debug.LogWarning($"EnsureGeneratedMenuItems: failed to configure MA MenuItem component: {ex.Message}");
                                     }
@@ -8505,7 +8505,7 @@ namespace VRCExpressionMenuVisualizer
                     }
                 }
             }
-            catch (Exception _)
+            catch (Exception ex)
             {
                 Debug.LogWarning($"ApplyExclusionSelection: post-process failed: {ex.Message}");
             }
@@ -9698,7 +9698,7 @@ namespace VRCExpressionMenuVisualizer
 
                     reflectionAvailable = true;
                 }
-                catch (Exception _)
+                catch (Exception ex)
                 {
                     reflectionAvailable = false;
                     Debug.LogWarning($"[ExpressionMenuVisualizer] Modular Avatar reflection unavailable: {ex.Message}");

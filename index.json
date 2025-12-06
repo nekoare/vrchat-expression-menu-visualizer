@@ -61,6 +61,34 @@
           ],
           "url": "https://nekoare.github.io/vrchat-expression-menu-visualizer/dev.nekoare.vrc-expression-menu-visualizer-1.1.0.zip",
           "zipSHA256": "7dffa2cdbbf4c4e619c05df2edbe69829e33fd2a8210a1ea8e6b99fc20ec0684"
+        },
+        "1.1.1": {
+          "name": "dev.nekoare.vrc-expression-menu-visualizer",
+          "displayName": "VRChat Expression Menu Visualizer",
+          "version": "1.1.1",
+          "description": "VRChatのExpressionMenuを視覚化・編集するためのUnityエディタツール。ModularAvatarとの完全互換性を提供し、直感的なインターフェースでメニュー階層を表示・編集できます。安定版とbeta版（高度なマーカーベース管理機能付き）の両方を含みます。",
+          "unity": "2022.3",
+          "unityRelease": "0f1",
+          "author": {
+            "name": "nekoare",
+            "url": "https://github.com/nekoare"
+          },
+          "changelogUrl": "https://github.com/nekoare/vrchat-expression-menu-visualizer#%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4",
+          "documentationUrl": "https://github.com/nekoare/vrchat-expression-menu-visualizer#readme",
+          "licenseUrl": "https://github.com/nekoare/vrchat-expression-menu-visualizer/blob/main/LICENSE",
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "keywords": [
+            "vrchat",
+            "expression",
+            "menu",
+            "editor",
+            "visualization",
+            "modular-avatar"
+          ],
+          "url": "https://nekoare.github.io/vrchat-expression-menu-visualizer/dev.nekoare.vrc-expression-menu-visualizer-v1.1.1.zip",
+          "zipSHA256": "21b4bf9fd3ec0175d30f89606307c18c6ab6f6dbc89b04b754ba961475d8ac62"
         }
       }
     }
